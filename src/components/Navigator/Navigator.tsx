@@ -9,7 +9,11 @@ const Navigator = ({ pathNames }: Props) => {
   return (
     <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
       {pathNames.map((pathName) => (
-        <Link href={pathName.path} key={pathName.path}>
+        <Link
+          className="bg-fuchsia-500 hover:bg-sky-700"
+          href={pathName.path}
+          key={pathName.path}
+        >
           {pathName.name}
         </Link>
       ))}

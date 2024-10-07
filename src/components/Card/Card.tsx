@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Character } from "@/app/characters/models";
-import { Location } from "@/app/locations/models";
+import { Character } from "@/app/(information)/characters/models";
+import { Location } from "@/app/(information)/locations/models";
 import styles from "./Card.module.css";
 
 interface CardData {
