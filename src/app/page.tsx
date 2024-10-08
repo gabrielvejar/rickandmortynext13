@@ -8,7 +8,7 @@ export default function App() {
     <div>
       <h1>Welcome to Rick and Morty app</h1>
       <h2>What do you want to see?</h2>
-      <Navigator pathNames={[Routes.CHARACTERS, Routes.LOCATIONS]} />
+      {/* <Navigator pathNames={[Routes.CHARACTERS, Routes.LOCATIONS]} /> */}
     </div>
   );
 }

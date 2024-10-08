@@ -1,5 +1,5 @@
 import "./tailwind-globals.scss";
-
+import { ResponsiveAppBar } from "../components";
 export default function RootLayout({
   children,
 }: {
@@ -8,7 +8,10 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body>{children}</body>
+      <body className="bg-slate-700">
+        <ResponsiveAppBar />
+        <div className="p-4 mt-16">{children}</div>
+      </body>
     </html>
   );
 }

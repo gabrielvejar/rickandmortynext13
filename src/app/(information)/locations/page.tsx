@@ -10,7 +10,7 @@ const Locations = async () => {
 
   return (
     <>
-      <Navigator pathNames={[Routes.HOME, Routes.CHARACTERS]} />
+      {/* <Navigator pathNames={[Routes.HOME, Routes.CHARACTERS]} /> */}
       {locations.map((location) => (
         <Card key={location.id} data={location} />
       ))}
