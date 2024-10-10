@@ -1,13 +1,24 @@
 import Link from "next/link";
-import { Routes } from "@/models";
+import { Entity, Routes } from "@/models";
 import styles from "./page.module.css";
-import { Navigator } from "@/components";
+import { Card, Navigator } from "@/components";
+import { Typography } from "@mui/material";
+import { getCharacterById } from "./(information)/characters/services";
+import { Character } from "./(information)/characters/models";
 
-export default function App() {
+const fetchRandomCharacter = async () => {
+  const randomId = Math.floor(Math.random() * 826);
+  const character = await getCharacterById(randomId);
+  return character as Character;
+};
+
+export default async function App() {
+  const character = await fetchRandomCharacter();
   return (
-    <div>
-      <h1>Welcome to Rick and Morty app</h1>
-      <h2>What do you want to see?</h2>
+    <div className="text-white">
+      <Typography variant="h1">Welcome to Rick and Morty app</Typography>
+      <Typography variant="h2">Random Character</Typography>
+      <Card data={{ ...character, entity: Entity.CHARACTERS }} />
       {/* <Navigator pathNames={[Routes.CHARACTERS, Routes.LOCATIONS]} /> */}
     </div>
   );

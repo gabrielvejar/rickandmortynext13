@@ -1,7 +1,7 @@
 import { Card, Navigator } from "@/components";
 import { Location } from "./models";
 import { getLocations } from "./services";
-import { Routes } from "@/models";
+import { Entity, Routes } from "@/models";
 
 const fetchLocations = async () => await getLocations();
 
@@ -12,7 +12,10 @@ const Locations = async () => {
     <>
       {/* <Navigator pathNames={[Routes.HOME, Routes.CHARACTERS]} /> */}
       {locations.map((location) => (
-        <Card key={location.id} data={location} />
+        <Card
+          key={location.id}
+          data={{ ...location, entity: Entity.LOCATIONS }}
+        />
       ))}
     </>
   );

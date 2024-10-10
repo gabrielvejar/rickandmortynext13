@@ -1,1 +1,2 @@
-export * from './route.model';
+export * from "./entity.model";
+export * from "./route.model";

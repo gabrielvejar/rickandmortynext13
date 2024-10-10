@@ -8,7 +8,7 @@ export function getLocations(): Promise<Location[]> {
     .then((data) => data.results);
 }
 
-export function getCharacterById(id: number): Promise<Location> {
+export function getLocationById(id: number): Promise<Location> {
   const url = "https://rickandmortyapi.com/api/location/" + id;
   return fetch(url)
     .then((res) => res.json())

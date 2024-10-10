@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Paper, Typography } from "@mui/material";
 import Link from "next/link";
 import { Routes } from "@/models";
+import { Character } from "../models";
 
 const fetchCharacter = async (id: number) => getCharacterById(id);
 
@@ -15,10 +16,16 @@ const CharacterDetails = async ({ params }: { params: { id: string } }) => {
     notFound();
   }
 
-  const data = await fetchCharacter(Number(id));
+  const response = await fetchCharacter(numberId);
+
+  if ("error" in response) {
+    return notFound();
+  }
+
+  const data = response as Character;
 
   return (
-    <>
+    <div className=" text-slate-200 flex flex-col justify-center items-center">
       <Paper elevation={24} className="w-fit">
         <Image width={300} height={300} alt={data.name} src={data.image} />
       </Paper>
@@ -38,7 +45,7 @@ const CharacterDetails = async ({ params }: { params: { id: string } }) => {
           {data.location.name}
         </Link>
       </Typography>
-    </>
+    </div>
   );
 };
 

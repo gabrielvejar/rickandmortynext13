@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body className="bg-slate-700">
+      <body className="bg-blue-950">
         <ResponsiveAppBar />
         <div className="p-4 mt-16">{children}</div>
       </body>

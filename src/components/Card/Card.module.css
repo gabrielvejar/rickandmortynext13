@@ -1,7 +1,76 @@
 .Card {
-    background-color: beige;
-    padding: 1rem;
-    border-radius: 0.25rem;
-    width: fit-content;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+  width: 288px;
+  height: 288px; /* Fijamos la altura para ver la imagen completa */
+  background-image: url("../../../public/assets/portal.png"); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  color: black; /* Texto blanco para contraste */
+  /* transition:
+    width 0.5s,
+    height 0.5s; */
 }
+
+.Card:hover {
+  /* width: 350px;
+  height: 350px; */
+  cursor: pointer;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        /* transform:rotate(0deg); */
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    to {
+        /* transform:rotate(360deg); */
+        transform: scale(1);
+    }
+}
+
+.CardContent {
+  position: relative;
+  width: 220px;
+  height: 250px;
+  z-index: 2; /* Asegura que esté sobre la imagen */
+  background-color: rgba(0, 0, 0, 0.35); /* Fondo semi-transparente */
+  padding: 8px;
+  border-radius: 115px; /* Bordes redondeados */
+  box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.3); /* Sombra */
+  color: white; /* Color de texto blanco para contraste */
+  text-align: center; /* Centrar el texto, imagen y botón */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  gap: 16px; /* Espacio entre los elementos */
+}
+/* 
+.CardContent:hover {
+  width: 260px;
+  height: 260px;
+  transition:
+    width 0.5s,
+    height 0.5s;
+} */
+
+.CardImage {
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para la tarjeta */
+}
+
+/* 
+.CardContent h5,
+.CardContent p {
+  margin: 8px 0;
+} */
